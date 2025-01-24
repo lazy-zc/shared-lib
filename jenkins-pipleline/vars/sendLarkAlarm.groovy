@@ -10,7 +10,7 @@ def call(String apiUrl, String jobName, String jobStatus) {
         "header": {
           "title": {
             "tag": "plain_text",
-            "content": "⚠️ Jenkins Job Alert"
+            "content": "Jenkins Job Alert"
           }
         },
         "elements": [
