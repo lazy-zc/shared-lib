@@ -9,17 +9,15 @@ def call(String apiUrl, String jobName, String jobStatus) {
     }
     """
     
-    def httpRequest = [
-        url: apiUrl,
-        httpMode: 'POST',
-        contentType: 'APPLICATION_JSON',
-        requestBody: payload,
-        quiet: true
-    ]
-    
-    // Send the request to Lark
     try {
-        httpRequest(httpRequest)
+        def response = httpRequest(
+            url: apiUrl,
+            httpMode: 'POST',
+            contentType: 'APPLICATION_JSON',
+            requestBody: payload,
+            quiet: true
+        )
+        
     } catch (Exception e) {
         echo "Failed to send alarm to Lark API: ${e.message}"
     }
